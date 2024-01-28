@@ -1,0 +1,37 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$colors: (
+// to override stuff
+);
+
+.fella {
+    color: $dark;
+    background-color: $gray-100;
+    border-radius: 25px;
+    padding: 25px;
+    transition: ease 0.5s;
+
+    box-shadow: 1px 1px 3px $gray-600;
+}
+
+.fella:hover{
+    background-color: $indigo-100;
+}
+
+.indigo{
+    background-color: #c29ffa;
+}
+
+
+.navbar{
+    margin-top: 20px;
+}
+
+.nav-item{
+    margin: 0 15px;
+}
+
+.navbar-brand{
+    margin: 0 15px;
+}
+
