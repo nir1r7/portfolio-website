@@ -5,5 +5,9 @@ body {
 
 .main {
   height: 100vh;
-  margin: 0 25vw;
+  margin: 20px 25vw 0 25vw;
+}
+
+.blur{
+  backdrop-filter: blur(15px);
 }
