@@ -4,10 +4,14 @@ body {
   height: 100%;
 }
 
+.App{
+  background-color: var(--black);
+  padding: 25px;
+}
+
 .main {
   height: 100%;
   margin: 0px 25vw 0 25vw;
-  padding: 25px;
 }
 
 .blur{
