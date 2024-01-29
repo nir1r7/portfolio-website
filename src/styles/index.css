@@ -6,12 +6,16 @@ body {
 
 .App{
   background-color: var(--black);
-  padding: 25px;
 }
 
 .main {
+  padding: 25px;
   height: 100%;
   margin: 0px 25vw 0 25vw;
+}
+
+.active-link{
+  text-decoration: underline;
 }
 
 .blur{

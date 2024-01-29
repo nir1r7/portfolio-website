@@ -3,7 +3,6 @@ import {Navbar} from './navigation';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar className/> */}
       <div className="main">
         <Navbar className/>
 
