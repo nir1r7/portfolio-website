@@ -1,12 +1,62 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+:root{
+    --night: #084C61;
+    --red: #BF1A2F;
+    --black: #0C1618;
+    --cyan: #58FCEC;
+    --vista-blue: #7F96FF;
+}
+
 $colors: (
-// to override stuff
+    // to override shit
 );
 
+.red-text{
+    color: var(--red);
+}
+
+.cyan-text{
+    color: var(--cyan);
+}
+
+.night-text{
+    color: var(--night);
+}
+
+.vista-text{
+    color: var(--vista-blue);
+}
+
+.red-bg{
+    background-color: var(--red);
+}
+
+.cyan-bg{
+    background-color: var(--cyan);
+}
+
+.night-bg{
+    background-color: var(--night);
+}
+
+.vista-bg{
+    background-color: var(--vista-blue);
+}
+
+.App{
+    background-color: var(--black);
+}
+
+.navbar{
+    padding-top: 50px;
+}
+
+.nav-item, .navbar-brand{
+    margin: 0 15px 5px 15px;
+}
+
 .fella {
-    color: $dark;
-    background-color: $gray-100;
     border-radius: 25px;
     padding: 25px;
     transition: ease 0.5s;
@@ -15,16 +65,4 @@ $colors: (
     width: 96%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.fella:hover{
-    background-color: $indigo-100;
-}
-
-.indigo{
-    background-color: #c29ffa;
-}
-
-.nav-item, .navbar-brand{
-    margin: 0 15px 5px 15px;
 }
