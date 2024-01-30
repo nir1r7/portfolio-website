@@ -12,36 +12,32 @@ $colors: (
     // to override shit
 );
 
-.red-text{
-    color: var(--red);
+.light-text{
+    color: #fff;
 }
 
 .cyan-text{
     color: var(--cyan);
 }
 
-.night-text{
-    color: var(--night);
-}
-
 .vista-text{
     color: var(--vista-blue);
-}
-
-.red-bg{
-    background-color: var(--red);
 }
 
 .cyan-bg{
     background-color: var(--cyan);
 }
 
-.night-bg{
-    background-color: var(--night);
-}
-
 .vista-bg{
     background-color: var(--vista-blue);
+}
+
+.cyan-border{
+    box-shadow: 1px 1px 3px var(--cyan);
+}
+
+.vista-border{
+    box-shadow: 1px 1px 3px var(--vista-blue);
 }
 
 .nav-item, .navbar-brand{
@@ -53,7 +49,7 @@ $colors: (
     padding: 25px;
     transition: ease 0.5s;
 
-    box-shadow: 1px 1px 3px $gray-600;
+    // box-shadow: 1px 1px 3px $gray-600;
     width: 96%;
     margin-left: auto;
     margin-right: auto;
