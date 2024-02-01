@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.css';
 
 export function Navbar(){
     return(
@@ -24,18 +24,35 @@ export function Navbar(){
 }
 
 function NavLinkList(props){
-    const links = [
-        <NavLink to="/Home" title="Home" color="light"/>,
-        <NavLink to="/Projects" title="Projects" color="light"/>,
-        <NavLink to="/Socials" title="Socials" color="light"/>
-    ]
+    const location = useLocation();
+    const [linkId, setLinkId] = useState(0);
+
+    const [links, setLinks] = useState([
+        <NavLink to="/Home" title="Home" color="light" active="false"/>,
+        <NavLink to="/Projects" title="Projects" color="light" active="false"/>,
+        <NavLink to="/Socials" title="Socials" color="light" active="false"/>
+    ]);
+
+    React.useEffect(() => {
+        console.log(location.pathname);
+
+        for (let i = 0; i < links.length; i++){
+            if (links[i].props.to === location.pathname){
+                setLinkId(i);
+                console.log(links[linkId]);
+            }
+        }
+
+        // const temp = <NavLink to={location.pathname} title={location.pathname.substring(1)} color="light" active="true"/>
+        
+    }, [location]);
 
     return (
       <>
         {
             links.map((link) => {
                 return(
-                    <> {link} </>
+                    <span key={link.props.to}> {link} </span>
                 )
             })
         }
@@ -44,24 +61,21 @@ function NavLinkList(props){
 }
 
 function NavLink(props){
-    const color = useState(props.color + "-text ");
+    const location = useLocation();
 
-    const [active, setActive] = useState(false);
-    const [className, setClassName] = useState("link-offset-2 link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover " + color);
+    const active = props.active;
+    const [className, setClassName] = useState("link-offset-2 link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover ");
 
-    const handleClick = () => {
-        console.log(active);
-        console.log(className);
+    React.useEffect(() => {
         active ? 
-            setClassName("link-offset-2 link-underline-light link-underline-opacity-100 " + color) :
-            setClassName("link-offset-2 link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover " + color)
-        setActive(!active);
-    }
+            setClassName("link-offset-2 link-underline-light link-underline-opacity-100 ") :
+            setClassName("link-offset-2 link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover ")
+    }, [location])
 
     return(
         <li className="nav-item">
             <span className="nav-link">
-                <Link className={className + (active ? " active-link " : "")} to={props.to} onClick={() => handleClick()}>
+                <Link className={className + (active ? " active-link " : "") + props.color + "-text "} to={props.to}>
                     {props.title}
                 </Link>
             </span>

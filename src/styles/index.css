@@ -12,7 +12,7 @@ body {
 .main {
   padding: 25px;
   min-height: 100vh;
-  margin: 0px 25vw 0 25vw;
+  margin: 0px 25vw;
 }
 
 .navbar{
